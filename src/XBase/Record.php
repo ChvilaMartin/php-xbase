@@ -307,7 +307,8 @@ class Record
 
     public function forceSetString($columnObj, $value)
     {
-        $this->choppedData[$columnObj->getName()] = str_pad(substr($value, 0, $columnObj->getDataLength()), $columnObj->getDataLength(), " ");
+        //$this->choppedData[$columnObj->getName()] = "0" . str_pad(str_replace(",","", (string) $value), '7', " ", STR_PAD_RIGHT);
+        $this->choppedData[$columnObj->getName()] = "0" . str_replace(",","", (string) $value);
     }
 
     public function setObjectByName($columnName, $value)
